@@ -61,7 +61,43 @@ The tools and the setup details used for the development of the PLL are given be
 The implementation of the individual components of the PLL is described in this section. 
 ### Frequency divider circuit
 The frequency divider consists of a toggle flip flop. <br/>
+
 <img src="Images/2_1_FD.jpg" width="600"> <br/> 
+
+```SystemVerilog
+.include sky130nm.lib
+
+xm1 1 2 3 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm2 0 2 3 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+xm3 3 Clkb 4 1 sky130_fd_pr__pfet_01v8 l=150n w=420n 
+xm4 3 Clk 4 0 sky130_fd_pr__nfet_01v8 l=150n w=840n 
+
+xm7 1 4 5 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm8 0 4 5 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+xm9 5 Clk 6 1 sky130_fd_pr__pfet_01v8 l=150n w=420n 
+xm10 5 Clkb 6 0 sky130_fd_pr__nfet_01v8 l=150n w=640n 
+
+xm11 1 6 2 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm12 0 6 2 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+xm13 1 Clk Clkb 1 sky130_fd_pr__pfet_01v8 l=150n w=720n 
+xm14 0 Clk Clkb 0 sky130_fd_pr__nfet_01v8 l=150n w=360n 
+
+v1 1 0 1.8
+v2 Clk 0 PULSE 0 1.8 1n 6p 6p 5ns 10ns
+
+c1 6 0 10f
+.control
+tran 0.1ns 0.2us
+plot v(6) v(Clk)+2
+.endc
+.end
+
+```
+
+<img src="Images/2_1_FDa.png" width="600"> <br/> 
 
 ### Charge pump circuit
 <img src="Images/2_1_CP.jpg" width="400"> <br/> 
