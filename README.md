@@ -113,7 +113,7 @@ The developed freqeuncy divider circuit can be opened using magic using the foll
 ```console
 magic -T sky130A.tech FD.mag
 ```
-img src="Images/2_1_FDb.PNG" width="400"> <br/> 
+<img src="Images/2_1_FDb.PNG" width="400"> <br/> 
 
 ### Charge pump circuit
 
