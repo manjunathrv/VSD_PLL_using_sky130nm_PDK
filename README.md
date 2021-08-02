@@ -60,7 +60,7 @@ The tools and the setup details used for the development of the PLL are given be
 ## Circuit implementation and spice simulation
 The implementation of the individual components of the PLL is described in this section. 
 ### Frequency divider circuit
-The frequency divider consists of a toggle flip flop. 
+The frequency divider consists of a toggle flip flop. <br/>
 <img src="Images/2_1_FD.jpg" width="600"> <br/> 
 
 ### Charge pump circuit
