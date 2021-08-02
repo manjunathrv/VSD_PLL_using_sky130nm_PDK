@@ -116,10 +116,15 @@ magic -T sky130A.tech FD.mag
 <img src="Images/2_1_FDb.PNG" width="400"> <br/> 
 
 ### Charge pump circuit
+The charge pump circuit converts the digital output from the Phase frequency detector to analog output to control the voltage controlled oscillator. <br/>
+The citcuit implementation consists of a current steering circuit implemented using mosfets as shown in the circuit below. <br/>
+The mosfet transistor pair at the top and bottom of the circuit form the current sources in the design. <br/> 
+During the time when UP is active the output voltage increases.The output voltage decreases during the  time when DOWN signal is active. <br/> 
 
 <img src="Images/2_1_CP.jpg" width="400"> <br/> 
 
 The obtained results using circuit simulation in ngspice is shown below, <br/>
+<br/> 
 <img src="Images/2_1_CPa.png" width="400"> <br/>
 
 ### Voltage control oscillator circuit
@@ -131,6 +136,7 @@ This results in the change in the frequency of the ring oscillator.  <br/>
 <img src="Images/2_1_VCO.jpg" width="400"> <br/> 
 
 The circuit is simulated in ngspice. <br/> 
+<br/> 
 <img src="Images/2_1_VCOa.png" width="400"> <br/> 
 The results show that the oscillation have a voltage output with full swing from 0 to 1.8V. 
 
@@ -139,6 +145,7 @@ The results show that the oscillation have a voltage output with full swing from
 <img src="Images/2_1_PFD.jpg" width="400"> <br/> 
 
 The circuit is simulated in ngspice. The phase difference of the reference and the feedback signal is 6ns <br/> 
+<br/> 
 <img src="Images/2_1_PFDa.png" width="400"> <br/>
 
 The circuit is able to detect the small difference between the reference and feedback signal. <br/>
