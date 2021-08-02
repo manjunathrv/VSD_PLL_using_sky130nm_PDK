@@ -31,7 +31,7 @@ The components of the PLL are described in the block diagram below, <br/>
 | Voltage Control Oscillator (VCO) | Onchip ring oscillator controlled by Voltage  |
 | Frequency Divider (FD) | Output frequencies that is multiple of the reference clock signal  |
 
-The circuit implementation and simulation of the components of the PLL will be discussed in Day 2.<br/>
+The circuit implementation, simulation and layout of the components of the PLL will be discussed in Day 2.<br/>
 
 ## Phase Locked Loop(PLL) Specification 
 The PLL specification are described below, 
@@ -60,7 +60,7 @@ The tools and the setup details used for the development of the PLL are given be
 ## Circuit implementation and spice simulation
 The implementation of the individual components of the PLL is described in this section. 
 ### Frequency divider circuit
-
+The frequency divider consists of a toggle flip flop. 
 <img src="Images/2_1_FD.jpg" width="600"> <br/> 
 
 ### Charge pump circuit
@@ -68,8 +68,15 @@ The implementation of the individual components of the PLL is described in this 
 
 ### Voltage control oscillator circuit
 The voltage control oscillator consists of Ring oscillator having a series odd number of inverters. <br/> 
-In the below circuit, the ring oscillator are implement with 3 inverters with 
+In the below circuit, the ring oscillator are implement with 3 inverter - 1st inverter: M3, M6 , 2nd inverter: M4, M7 and 3rd inverter: M5,M8 <br/> 
+By using a current starving mechanism, the current through the ring oscillator can be controlled to obtain different output frequency. <br/> 
+The input control voltage Vcntrl controls the current through the ring oscillator.  <br/> 
+This results in the change in the frequency of the ring oscillator.  <br/> 
 <img src="Images/2_1_VCO.jpg" width="400"> <br/> 
+
+The circuit is simulated in ngspice. 
+
+
 ### Phase frequency detector
 <img src="Images/2_1_PFD.jpg" width="400"> <br/> 
 
