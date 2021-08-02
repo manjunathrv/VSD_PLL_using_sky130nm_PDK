@@ -57,10 +57,9 @@ The tools and the setup details used for the development of the PLL are given be
 
 # Day 2 
 
-## Circuit implementation and spice simulation
 The implementation of the individual components of the PLL are described in this section. 
 
-### Frequency divider circuit
+## Frequency divider circuit
 The frequency divider consists of a toggle flip flop. <br/>
 The output of the toggle flip flop will be half of input frequency signal. <br/>
 The circuit diagram of the toggle flip flop is shown below, <br/> 
@@ -103,7 +102,7 @@ The command to run the spice file <br/>
 ngspice FD.cir
 ```
 The output of the frequency divider is shown below,<br/>
-<img src="Images/2_1_FDa.png" width="400"> <br/> 
+<img src="Images/2_1_FDa.png" width="600"> <br/> 
 
 From the above result, it can be seen that the output frequency in red is half the input frequency in blue.<br/> 
 
@@ -113,9 +112,9 @@ The developed freqeuncy divider circuit can be opened using magic using the foll
 ```console
 magic -T sky130A.tech FD.mag
 ```
-<img src="Images/2_1_FDb.PNG" width="400"> <br/> 
+<img src="Images/2_1_FDb.PNG" width="600"> <br/> 
 
-### Charge pump circuit
+## Charge pump circuit
 The charge pump circuit converts the digital output from the Phase frequency detector to analog output to control the voltage controlled oscillator. <br/>
 The citcuit implementation consists of a current steering circuit implemented using mosfets as shown in the circuit below. <br/>
 The mosfet transistor pair at the top and bottom of the circuit form the current sources in the design. <br/> 
@@ -125,14 +124,14 @@ During the time when UP is active the output voltage increases.The output voltag
 
 The obtained results using circuit simulation in ngspice is shown below, <br/>
 <br/> 
-<img src="Images/2_1_CPa.png" width="400"> <br/>
+<img src="Images/2_1_CPa.png" width="600"> <br/>
 From the output graphs, it is seen that the charge pump output signal increases with UP signal active. <br/>
 
 The layout of the charge pump circuit is shown below,<br/> 
 <br/>
-<img src="Images/2_1_CPb.PNG" width="400"> <br/>
+<img src="Images/2_1_CPb.PNG" width="600"> <br/>
 
-### Voltage control oscillator circuit
+## Voltage control oscillator circuit
 The voltage control oscillator consists of a Ring oscillator having a series odd number of inverters. <br/> 
 In the below circuit, the ring oscillator are implement with 3 inverter - 1st inverter: M3, M6 , 2nd inverter: M4, M7 and 3rd inverter: M5,M8 <br/> 
 By using a current starving mechanism, the current through the ring oscillator can be controlled to obtain different output frequency. <br/> 
@@ -142,14 +141,14 @@ This results in the change in the frequency of the ring oscillator.  <br/>
 
 The circuit is simulated in ngspice. <br/> 
 <br/> 
-<img src="Images/2_1_VCOa.png" width="400"> <br/> 
+<img src="Images/2_1_VCOa.png" width="600"> <br/> 
 The results show that the oscillation have a voltage output with full swing from 0 to 1.8V. 
 
 The layout of the charge pump circuit is shown below,<br/>
 <br/>
-<img src="Images/2_1_VCOb.PNG" width="400"> <br/> 
+<img src="Images/2_1_VCOb.PNG" width="600"> <br/> 
 
-### Phase frequency detector circuit 
+## Phase frequency detector circuit 
 The Phase frequency detector generates output as UP signal if the VCO signal is laging the reference signal and a DOWN signal if the the output of the VCO is leading the reference signal. <br/>
 The UP and DOWN signal determines if the output frequency of the VCO needs to be increased or decreased. <br/>
 The Phase frequency detector is implement using the below circuit, <br/>
@@ -157,28 +156,38 @@ The Phase frequency detector is implement using the below circuit, <br/>
 
 The circuit is simulated in ngspice. The phase difference of the reference and the feedback signal is 6ns <br/> 
 <br/> 
-<img src="Images/2_1_PFDa.png" width="400"> <br/>
+<img src="Images/2_1_PFDa.png" width="600"> <br/>
 
 The circuit is able to detect the small difference between the reference and feedback signal. <br/>
 
 The layout of the Phase frequency detector in magic is shown below, <br/>
 <br/>
-<img src="Images/2_1_PFDb.PNG" width="400"> <br/>
+<img src="Images/2_1_PFDb.PNG" width="600"> <br/>
 
-### PLL circuit simulation  
+## PLL circuit simulation  
 In the next step, a combined simulation of all the circuit components are done in ngspice. <br/>
-The obtained output from the ngspice is shown below, <br/> 
-<img src="Images/2_1_PLLa.png" width="400"> <br/>
-<img src="Images/2_1_PLLb.png" width="400"> <br/>
-<img src="Images/2_1_PLLc.png" width="400"> <br/>
-
-The layout of the Phase frequency detector in magic is shown below, <br/>
+The obtained output from ngspice is shown below, <br/> 
+<img src="Images/2_1_PLLa.png" width="600"> <br/>
 <br/>
-<img src="Images/2_1_PLL_layout.PNG" width="400"> <br/>
+<img src="Images/2_1_PLLb.png" width="600"> <br/>
+<br/>
+<img src="Images/2_1_PLLc.png" width="600"> <br/>
+<br/>
 
+The reference signal is in red and the feedback signal is blue
 
+The layout of the complete PLL in magic is shown below, <br/>
+<br/>
+<img src="Images/2_1_PLL_layout.PNG" width="600"> <br/>
 
+## Post layout analysis of the Phase frequency detector  
+The parasitic capacitance and resistance are extracted from the layout and post layout spice analysis is done. <br/>
+The commands are executed in magic command window as shown below, <br/>
+<br/>
+<img src="Images/2_1_PFD_Post_a.png" width="600"> <br/>
 
-
+The obtained output from ngspice for the post layout simulation is shown below, <br/> 
+<br/>
+<img src="Images/2_1_PFD_Post_b.png" width="600"> <br/>
 
 
