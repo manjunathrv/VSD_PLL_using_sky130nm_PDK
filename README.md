@@ -98,46 +98,50 @@ plot v(6) v(Clk)+2
 .endc
 .end
 ```
-The command to run the spice file 
+The command to run the spice file <br/>
 ```console
 ngspice FD.cir
 ```
-The output of the frequency divider is shown below,  
-<img src="Images/2_1_FDa.png" width="600"> <br/> 
+The output of the frequency divider is shown below,<br/>
+<img src="Images/2_1_FDa.png" width="400"> <br/> 
+
+From the above result, it can be seen that the output frequency in red is half the input frequency in blue.<br/> 
 
 The layout of the Frequency Divider is done using magic.<br/> 
-The developed freqeuncy divider circuit can be opened using magic 
+The developed freqeuncy divider circuit can be opened using magic using the following commands, <br/>
 
 ```console
 magic -T sky130A.tech FD.mag
 ```
-
-<img src="Images/2_1_FDb.PNG" width="400"> <br/> 
+img src="Images/2_1_FDb.PNG" width="400"> <br/> 
 
 ### Charge pump circuit
+
 <img src="Images/2_1_CP.jpg" width="400"> <br/> 
 
+The obtained results using circuit simulation in ngspice is shown below, <br/>
+<img src="Images/2_1_CPa.png" width="400"> <br/>
+
 ### Voltage control oscillator circuit
-The voltage control oscillator consists of Ring oscillator having a series odd number of inverters. <br/> 
+The voltage control oscillator consists of a Ring oscillator having a series odd number of inverters. <br/> 
 In the below circuit, the ring oscillator are implement with 3 inverter - 1st inverter: M3, M6 , 2nd inverter: M4, M7 and 3rd inverter: M5,M8 <br/> 
 By using a current starving mechanism, the current through the ring oscillator can be controlled to obtain different output frequency. <br/> 
 The input control voltage Vcntrl controls the current through the ring oscillator.  <br/> 
 This results in the change in the frequency of the ring oscillator.  <br/> 
 <img src="Images/2_1_VCO.jpg" width="400"> <br/> 
 
-The circuit is simulated in ngspice. 
-
+The circuit is simulated in ngspice. <br/> 
+<img src="Images/2_1_VCOa.png" width="400"> <br/> 
+The results show that the oscillation have a voltage output with full swing from 0 to 1.8V. 
 
 ### Phase frequency detector
+
 <img src="Images/2_1_PFD.jpg" width="400"> <br/> 
 
+The circuit is simulated in ngspice. The phase difference of the reference and the feedback signal is 6ns <br/> 
+<img src="Images/2_1_PFDa.png" width="400"> <br/>
 
-
-
-
-
-
-
+The circuit is able to detect the small difference between the reference and feedback signal. <br/>
 
 
 
