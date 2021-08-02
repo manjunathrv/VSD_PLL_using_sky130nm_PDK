@@ -62,7 +62,9 @@ The implementation of the individual components of the PLL are described in this
 
 ### Frequency divider circuit
 The frequency divider consists of a toggle flip flop. <br/>
-<img src="Images/2_1_FD.jpg" width="600"> <br/> 
+The output of the toggle flip flop will be half of input frequency signal. <br/>
+The circuit diagram of the toggle flip flop is shown below, <br/> 
+<img src="Images/2_1_FD.jpg" width="400"> <br/> 
 
 The spice file for the simulation of the Frequency divider is written as below, <br/>
 ```SystemVerilog
@@ -103,9 +105,14 @@ ngspice FD.cir
 The output of the frequency divider is shown below,  
 <img src="Images/2_1_FDa.png" width="600"> <br/> 
 
+The layout of the Frequency Divider is done using magic.<br/> 
+The developed freqeuncy divider circuit can be opened using magic 
+
 ```console
-magic -T  
+magic -T sky130A.tech FD.mag
 ```
+
+<img src="Images/2_1_FDb.PNG" width="400"> <br/> 
 
 ### Charge pump circuit
 <img src="Images/2_1_CP.jpg" width="400"> <br/> 
