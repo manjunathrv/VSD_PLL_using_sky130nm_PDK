@@ -191,5 +191,29 @@ The commands are executed in magic command window as shown below, <br/>
 The obtained output from ngspice for the post layout simulation is shown below, <br/> 
 <br/>
 <img src="Images/2_1_PFD_Post_b.png" width="600"> <br/>
+The result shows that the circuit can detect phase difference of 1ns. 
+
+## Combine the layout of the circuit components 
+The layout of the charge pump circuit and the Voltage control oscillator using metal1 can be done in magic. <br/>
+The combined layout of the charge pump circuit and the VCO is shown below, <br/>
+ <br/>
+ <img src="Images/2_1_Combine.PNG" width="600"> <br/>
+ 
+ ## Combine PLL layout with Caravel SoC 
+ The Caravel SoC is a PicoRV32 RISC based SoC provided by Google-Skywater OpenPDK programme. <br/>
+ The user project area is about 2.92mm x 3.52mm with 36 GPIOs.<br/>
+ In the next step, the PLL layout is added in the user project area. <br/>
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
 
 
