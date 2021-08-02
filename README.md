@@ -6,14 +6,16 @@ Table of contents
 =================
 <!--ts-->
    * [Day 1](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#day-1)
-      * [Introduction to Phase Locked Loop(PLL)](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#introduction-to-physical-design-flow)
-      * [Phase Locked Loop(PLL) Specification](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#introduction-to-openlane-flow)
-      * [Tool Setup](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#openlane-directory-structure)
+      * [Introduction to Phase Locked Loop(PLL)](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#introduction-to-phase-locked-looppll)
+      * [Phase Locked Loop(PLL) Specification](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#phase-locked-looppll-specification)
+      * [Tool Setup](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#tool-setup)
    * [Day 2](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#day-2)
-      * [Frequency Divider circuit](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#design-prepartion-and-synthesis-flow)
-      * [Charge pump circuit](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#design-prepartion-and-synthesis-flow)
-      * [Voltage control oscillator circuit](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#design-prepartion-and-synthesis-flow)
-      * [Phase frequency detector](https://github.com/manjunathrv/VSD_Advanced_Physical_Design_with_sky130nmPDK#design-prepartion-and-synthesis-flow)
+      * [Frequency Divider circuit](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#frequency-divider-circuit)
+      * [Charge pump circuit](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#charge-pump-circuit)
+      * [Voltage control oscillator circuit](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#voltage-control-oscillator-circuit)
+      * [Phase frequency detector](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#phase-frequency-detector-circuit)
+      * [PLL circuit simulation](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#pll-circuit-simulation)
+      * [Post layout analysis of the Phase frequency detector](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#post-layout-analysis-of-the-phase-frequency-detector)
 
 # Day 1 
 
@@ -173,8 +175,8 @@ The obtained output from ngspice is shown below, <br/>
 <br/>
 <img src="Images/2_1_PLLc.png" width="600"> <br/>
 <br/>
-
-The reference signal is in red and the feedback signal is blue
+The frequency division is shown in signal with pink(4th row), green(5th row) and orange(6th row). <br/>
+The reference signal is in red and the feedback signal is in blue show slight fluctuation.<br/>
 
 The layout of the complete PLL in magic is shown below, <br/>
 <br/>
