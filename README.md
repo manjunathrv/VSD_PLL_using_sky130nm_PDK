@@ -58,12 +58,13 @@ The tools and the setup details used for the development of the PLL are given be
 # Day 2 
 
 ## Circuit implementation and spice simulation
-The implementation of the individual components of the PLL is described in this section. 
+The implementation of the individual components of the PLL are described in this section. 
+
 ### Frequency divider circuit
 The frequency divider consists of a toggle flip flop. <br/>
-
 <img src="Images/2_1_FD.jpg" width="600"> <br/> 
 
+The spice file for the simulation of the Frequency divider is written as below, <br/>
 ```SystemVerilog
 .include sky130nm.lib
 
@@ -94,10 +95,17 @@ tran 0.1ns 0.2us
 plot v(6) v(Clk)+2
 .endc
 .end
-
 ```
-
+The command to run the spice file 
+```console
+ngspice FD.cir
+```
+The output of the frequency divider is shown below,  
 <img src="Images/2_1_FDa.png" width="600"> <br/> 
+
+```console
+magic -T  
+```
 
 ### Charge pump circuit
 <img src="Images/2_1_CP.jpg" width="400"> <br/> 
