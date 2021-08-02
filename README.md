@@ -1,4 +1,4 @@
-# VSD_PLL_using_sky130nm_PDK
+# VSD PLL using sky130nm OpenPDK Workshop
 A 2-day workshop in the analysis and implementation of PLL in skywater 130nm OpenPDK is conducted by VSD. <br/> 
 The report presents the activities done during the two-day workshop. 
 
@@ -16,6 +16,9 @@ Table of contents
       * [Phase frequency detector](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#phase-frequency-detector-circuit)
       * [PLL circuit simulation](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#pll-circuit-simulation)
       * [Post layout analysis of the Phase frequency detector](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#post-layout-analysis-of-the-phase-frequency-detector)
+      * [Combine the layout of the circuit components](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#combine-pll-layout-with-caravel-soc)
+   * [Reference](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#reference)
+   * [Acknowledgement](https://github.com/manjunathrv/VSD_PLL_using_sky130nm_PDK#acknowledgement) 
 
 # Day 1 
 
