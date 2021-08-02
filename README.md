@@ -201,9 +201,13 @@ The combined layout of the charge pump circuit and the VCO is shown below, <br/>
  
  ## Combine PLL layout with Caravel SoC 
  The Caravel SoC is a PicoRV32 RISC based SoC provided by Google-Skywater OpenPDK programme. <br/>
- The user project area is about 2.92mm x 3.52mm with 36 GPIOs.<br/>
- In the next step, the PLL layout is added in the user project area. <br/>
+ The user project area is about 2.92mm x 3.52mm with 36 GPIOs as shown in the block diagram below,<br/>
+ <img src="Images/2_1_Caravel.PNG" width="600"> <br/>
  
+ In the next step, the PLL layout is added in the user project area. <br/>
+ The user_analog_project_wrapper_empty.gds file is downloaded from the efabless github https://github.com/efabless/caravel-lite/tree/main/gds <br/>
+ The Pins are located on the corner of the block. In the below image the I/O pins can be found on the bottom left corner. 
+ <img src="Images/2_1_Caravela.PNG" width="600"> <br/>
  
  
  
