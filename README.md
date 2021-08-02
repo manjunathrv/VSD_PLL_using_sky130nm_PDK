@@ -206,11 +206,26 @@ The combined layout of the charge pump circuit and the VCO is shown below, <br/>
  
  In the next step, the PLL layout is added in the user project area. <br/>
  The user_analog_project_wrapper_empty.gds file is downloaded from the efabless github https://github.com/efabless/caravel-lite/tree/main/gds <br/>
- The Pins are located on the corner of the block. In the below image the I/O pins can be found on the bottom left corner. 
+ The Pins are located on the corner of the block. In the below image the I/O pins can be found on the bottom left corner. <br/>
+ <br/>
  <img src="Images/2_1_Caravela.PNG" width="600"> <br/>
  
+ The PLL layout is placed as an instance on the upper left corner close to the analog IO pin. <br/>
+ A metal 2 and metal 3 contact is done between the output pin of the PLL block and the analog IO pin. <br/>
+ <br/>
+ <img src="Images/2_1_Caravelb.PNG" width="600"> <br/>
+ 
+ The final layout of PLL integrated with the caravel SOC is shown below, <br/>
+ <br/>
+ <img src="Images/2_1_Caravelc.PNG" width="600"> <br/>
  
  
+# Reference 
+Github of the PLL used in this workshop - https://github.com/lakshmi-sathi/avsdpll_1v8
+
+# Acknowledgement 
+Lakshmi Sathi - Course Instructor <br/>
+Kunal Ghosh - VSD India Pvt Ltd <br/>
 
 
 
