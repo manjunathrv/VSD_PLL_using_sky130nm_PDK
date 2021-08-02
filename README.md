@@ -25,7 +25,7 @@ The components of the PLL are described in the block diagram below, <br/>
 
 | Components                     | Funtionality           |
 |--------------------------------|-----------------------|
-| Phase Frequency Detector (PFD) | Comparastion between Feedback signal and Reference signal |
+| Phase Frequency Detector (PFD) | Comparison between the phase difference between Feedback signal and Reference signal |
 | Charge Pump (CP) | Converts the digital output of the PFD to analog signal |
 | Low Pass Filter(LP) | Smoothen the charge pump output signal  |
 | Voltage Control Oscillator (VCO) | Onchip ring oscillator controlled by Voltage  |
@@ -126,6 +126,11 @@ During the time when UP is active the output voltage increases.The output voltag
 The obtained results using circuit simulation in ngspice is shown below, <br/>
 <br/> 
 <img src="Images/2_1_CPa.png" width="400"> <br/>
+From the output graphs, it is seen that the charge pump output signal increases with UP signal active. <br/>
+
+The layout of the charge pump circuit is shown below,<br/> 
+<br/>
+<img src="Images/2_1_CPb.PNG" width="400"> <br/>
 
 ### Voltage control oscillator circuit
 The voltage control oscillator consists of a Ring oscillator having a series odd number of inverters. <br/> 
@@ -140,8 +145,14 @@ The circuit is simulated in ngspice. <br/>
 <img src="Images/2_1_VCOa.png" width="400"> <br/> 
 The results show that the oscillation have a voltage output with full swing from 0 to 1.8V. 
 
-### Phase frequency detector
+The layout of the charge pump circuit is shown below,<br/>
+<br/>
+<img src="Images/2_1_VCOb.PNG" width="400"> <br/> 
 
+### Phase frequency detector circuit 
+The Phase frequency detector generates output as UP signal if the VCO signal is laging the reference signal and a DOWN signal if the the output of the VCO is leading the reference signal. <br/>
+The UP and DOWN signal determines if the output frequency of the VCO needs to be increased or decreased. <br/>
+The Phase frequency detector is implement using the below circuit, <br/>
 <img src="Images/2_1_PFD.jpg" width="400"> <br/> 
 
 The circuit is simulated in ngspice. The phase difference of the reference and the feedback signal is 6ns <br/> 
@@ -149,6 +160,24 @@ The circuit is simulated in ngspice. The phase difference of the reference and t
 <img src="Images/2_1_PFDa.png" width="400"> <br/>
 
 The circuit is able to detect the small difference between the reference and feedback signal. <br/>
+
+The layout of the Phase frequency detector in magic is shown below, <br/>
+<br/>
+<img src="Images/2_1_PFDb.PNG" width="400"> <br/>
+
+### PLL circuit simulation  
+In the next step, a combined simulation of all the circuit components are done in ngspice. <br/>
+The obtained output from the ngspice is shown below, <br/> 
+<img src="Images/2_1_PLLa.png" width="400"> <br/>
+<img src="Images/2_1_PLLb.png" width="400"> <br/>
+<img src="Images/2_1_PLLc.png" width="400"> <br/>
+
+The layout of the Phase frequency detector in magic is shown below, <br/>
+<br/>
+<img src="Images/2_1_PLL_layout.PNG" width="400"> <br/>
+
+
+
 
 
 
